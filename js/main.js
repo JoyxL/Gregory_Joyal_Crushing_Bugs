@@ -42,3 +42,11 @@ puzzlePieces.forEach(piece => piece.addEventListener("dragstart", handleStartDra
 dropZones.forEach(zone => zone.addEventListener("dragover", handleOver));
 
 dropZones.forEach(zone => zone.addEventListener("drop", handleDrop));
+
+function handleDrop() {
+    if (this.children.length > 0) {
+        return;
+    }
+    this.appendChild(draggedPiece);
+}
+
